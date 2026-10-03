@@ -50,7 +50,7 @@ func (p *PasswordGen) prepareComands(args []string) {
 	)
 
 	noNumbers := passwordFlags.Bool(
-		"noNumeber",
+		"noNumbers",
 		false,
 		"Must don't exist numbers in your password",
 	)
