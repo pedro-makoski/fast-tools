@@ -20,14 +20,28 @@ type PasswordGen struct {
 func (p *PasswordGen) Do() error {
 	p.prepareComands(os.Args[2:])
 
+	err := p.verifyParams()
+
+	if err != nil {
+		return err
+	}
+
 	senha, err := p.generatePassword()
 
 	if err != nil {
 		return err
 	}
 
-	fmt.Println("Senha gerada com sucesso:")
+	fmt.Println("Password Generated with sucess:")
 	fmt.Println(senha)
+
+	return nil
+}
+
+func (p *PasswordGen) verifyParams() error {
+	if !p.hasChars && !p.hasNumbers && !p.hasSimbols {
+		return errors.New("You can't disable all type of chars")
+	}
 
 	return nil
 }
