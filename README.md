@@ -14,7 +14,7 @@ The video and text conversion modules require **FFmpeg** to be installed and ava
 
 ## Installation
 
-You can install Fast Tools using the system package available for **Ubuntu, Windows, and macOS**.
+You can install Fast Tools for **Ubuntu, Windows, and macOS**. You can find it in the right side section: "Realeases"
 
 After downloading the package, it is recommended to add the executable to your system's `PATH` so that it can be accessed from any terminal location.
 
