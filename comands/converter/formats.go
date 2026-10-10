@@ -2,7 +2,7 @@ package converter
 
 const (
 	// Audio Formats
-	MP3 = iota
+	MP3 int = iota
 	WAV
 	OGG
 	FLAC

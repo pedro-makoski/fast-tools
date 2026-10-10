@@ -37,7 +37,7 @@ func getToConvertFiles(baseSrc string, baseDst string) ([]ConvertFile, error) {
 		if hasWildcard {
 			dstPath = filepath.Join(
 				filepath.Dir(src.path),
-				srcName+filepath.Ext(baseDst),
+				strings.ReplaceAll(baseDst, "*", srcName),
 			)
 		} else if len(srcFiles) == 1 {
 			dstPath = filepath.Join(dstDir, dstName)
@@ -50,7 +50,7 @@ func getToConvertFiles(baseSrc string, baseDst string) ([]ConvertFile, error) {
 			dst: FormatFile{
 				path:       dstPath,
 				typeOfFile: dstType,
-				foramtFile: dstFormat,
+				formatfile: dstFormat,
 			},
 		})
 	}
@@ -86,7 +86,7 @@ func resolveSourceFiles(value string) ([]FormatFile, error) {
 			files = append(files, FormatFile{
 				path:       match,
 				typeOfFile: getTypeFromFormat(format),
-				foramtFile: format,
+				formatfile: format,
 			})
 		}
 
@@ -106,7 +106,7 @@ func resolveSourceFiles(value string) ([]FormatFile, error) {
 		{
 			path:       path,
 			typeOfFile: getTypeFromFormat(format),
-			foramtFile: format,
+			formatfile: format,
 		},
 	}, nil
 }
